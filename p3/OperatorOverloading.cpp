@@ -11,14 +11,17 @@ struct YoutubeChannel {
     SubscribersCount = subscribersCount;
   }
 };
-void operator<<(ostream &COUT, YoutubeChannel &ytChannel){
+ostream & operator<<(ostream &COUT, YoutubeChannel &ytChannel){
     COUT << "Name: " << ytChannel.Name << endl;
     COUT << "Subscribers: " << ytChannel.SubscribersCount <<endl;
+    return COUT;
 };
 
 int main() {
     YoutubeChannel yt1 = YoutubeChannel("ErickDJ", 10) ;
     cout << yt1;
+    YoutubeChannel yt2 = YoutubeChannel("OPenBoxes", 202) ;
+    cout << yt1 << yt2;
   cin.get();
   return 0;
 }
